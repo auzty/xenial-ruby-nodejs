@@ -85,6 +85,8 @@ RUN apt-get update &&  apt-get install -y nodejs tzdata libssl-dev apt-transport
 
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
 
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7EA0A9C3F273FCD8
+
 RUN apt-get update &&  apt-get install -y docker-ce-cli  && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update &&  apt-get install -y nodejs tzdata libssl-dev  && rm -rf /var/lib/apt/lists/*
