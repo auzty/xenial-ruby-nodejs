@@ -81,5 +81,5 @@ CMD [ "irb" ]
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 
-RUN apt install -y nodejs  && rm -rf /var/lib/dpkg/*
+RUN apt install -y nodejs  && rm -rf /var/lib/dpkg/* && touch /var/lib/dpkg/status
 
