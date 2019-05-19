@@ -81,5 +81,5 @@ CMD [ "irb" ]
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 
-RUN apt-get update &&  apt-get install -y nodejs  && rm -rf /var/lib/apt/lists/*
+RUN apt-get update &&  apt-get install -y nodejs tzdata  && rm -rf /var/lib/apt/lists/*
 
