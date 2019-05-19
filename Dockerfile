@@ -75,11 +75,15 @@ RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
 
 CMD [ "irb" ]
 
-
-
 #install nodejs
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 
-RUN apt-get update &&  apt-get install -y nodejs tzdata  && rm -rf /var/lib/apt/lists/*
+RUN apt-get update &&  apt-get install -y nodejs tzdata libssl-dev apt-transport-https software-properties-common  && rm -rf /var/lib/apt/lists/*
+
+# install docker
+
+RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+
+RUN apt-get update &&  apt-get install -y docker-ce-cli  && rm -rf /var/lib/apt/lists/*
 
